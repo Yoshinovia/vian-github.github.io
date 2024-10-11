@@ -57,7 +57,9 @@ h5{
     background-color:rgb(0, 0, 0, 0.3);
     color: aliceblue;
     backdrop-filter: blur(8px);
+    
 }
+
 
 .Box:hover {
     animation-name: scrollAnimation;
@@ -89,7 +91,8 @@ h5{
     justify-content: space-between;
     gap:20px;
     font-size: 20px;
-    color:aliceblue
+    color:white;
+    ;
 }
 
 .uld2:hover{
@@ -102,6 +105,23 @@ h5{
     transition:all 0.5s;
     
 }
+
+.img1{
+    animation-name: rotate;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 
 .pd{
     color: white;
@@ -153,20 +173,20 @@ a:visited{
 .imgd3{
     width:550px ;
     height:600px;
-    animation-name: rotate;
-    animation-duration: 5s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
+    animation-name: autoRotateAnimation;
+    animation-timeline: view(50%);
 }
 
-@keyframes rotate {
-    0% {
+@keyframes autoRotateAnimation {
+    from {
         transform: rotate(0deg);
     }
-    100% {
+    to {
         transform: rotate(360deg);
     }
 }
+
+
 
 /* .pd:hover{
     animation-name:colors;
@@ -232,7 +252,21 @@ h1{
     font-size: 60px;
     font-family: Arial, Helvetica, sans-serif;
     margin:0;
+}
 
+.pd{
+    animation: dd both;
+    animation-timeline: view(70% 5%);
+}
+@keyframes dd{
+    from{
+        opacity: 0;
+        transform: translateY(200px) scale(0.3);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
 }
 
 #about1{
@@ -249,6 +283,20 @@ h1{
         clip-path: inset(0 round 8px);
     }
 
+#about1{
+    animation: cc both;
+    animation-timeline: view(70% 5%);
+}
+@keyframes cc{
+    from{
+        opacity: 0;
+        transform: translateY(200px) scale(0.3);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
 
     @media (max-width: 768px) {
         #hobby{
@@ -292,18 +340,27 @@ h1{
         }
     }
 
-.typewriter{
-    animation: type 4s steps(44);
-}
 
-@keyframes type {
-    from {
-        width: 0;
+    .typewriter h1 {
+        overflow: hidden;
+        border-right: .15em solid orange;
+        white-space: nowrap;
+        margin: 0 auto;
+        letter-spacing: .15em;
+        animation: typing 3.5s steps(40, end),
+        blink-caret .75s step-end infinite;
     }
-    to {
-        width: 100%;
+    
+    @keyframes typing {
+        from { width: 0 }
+        to { width: 100% }
     }
-}
+    
+    @keyframes blink-caret {
+        from, to { border-color: transparent }
+        50% { border-color: orange; }
+    }
+
 
     /* .cursor-follower::after{
         content:"";
