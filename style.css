@@ -1,5 +1,5 @@
 body {
-    background-color: #222;
+    /* background-color: #222; */
     overflow: hidden;
     cursor: none;
 }
@@ -142,14 +142,14 @@ li:nth-child(12n):hover {
     left: 0;
     z-index: 9999;
     pointer-events: none;
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
     background: radial-gradient(ellipse at center, #ff0000 0%, #ff0000 80%, transparent 80%);
     filter: blur(10px);
-    animation: cursor 2s infinite;
+    animation: cat 2s infinite;
 }
 
-@keyframes cursor {
+@keyframes cat {
     0% {
         transform: translate(-50%, -50%) scale(1);
     }
@@ -206,10 +206,10 @@ body:hover:after {
 }
 
 body:hover .cursor {
-    animation: cursor-glow 2s infinite;
+    animation: cat-glow 2s infinite;
 }
 
-@keyframes cursor-glow {
+@keyframes cat-glow {
     0% {
         opacity: 1;
     }
